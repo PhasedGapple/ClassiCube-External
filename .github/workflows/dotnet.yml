@@ -26,7 +26,7 @@ jobs:
         id: create_release
         run: |
           RELEASE_TAG="v$(date +'%Y%m%d%H%M%S')"
-          zip -r build.zip ./bin/
+          zip -r build.zip . -i ./bin/
           gh release create "$RELEASE_TAG" build.zip --title "Release $RELEASE_TAG" --notes "Automated release created via GitHub Actions"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
