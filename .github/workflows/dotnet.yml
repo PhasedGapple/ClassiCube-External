@@ -27,14 +27,31 @@ jobs:
       - name: Test
         run: dotnet test --no-build --verbosity normal
 
-      - name: Publish build output
-        run: dotnet publish -c Release -o ./output
+      # Publish for Windows (creating an .exe)
+      - name: Publish for Windows
+        run: dotnet publish -c Release -r win-x64 --self-contained true -o ./output/windows
 
-      - name: Zip the output directory
-        run: zip -r build.zip ./output/*
+      # Optionally, publish for Linux or other platforms
+      - name: Publish for Linux
+        run: dotnet publish -c Release -r linux-x64 --self-contained true -o ./output/linux
 
-      - name: Upload build artifact
+      # Zip Windows build output
+      - name: Zip Windows build
+        run: zip -r windows_build.zip ./output/windows/*
+
+      # Upload the Windows build artifact
+      - name: Upload Windows build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dotnet-build-${{ github.run_number }}
-          path: build.zip
+          name: windows-build-${{ github.run_number }}
+          path: windows_build.zip
+
+      # Optionally, zip and upload the Linux build artifact
+      - name: Zip Linux build
+        run: zip -r linux_build.zip ./output/linux/*
+
+      - name: Upload Linux build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-build-${{ github.run_number }}
+          path: linux_build.zip
