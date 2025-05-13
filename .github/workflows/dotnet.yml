@@ -31,10 +31,6 @@ jobs:
       - name: Publish for Windows
         run: dotnet publish -c Release -r win-x64 --self-contained true -o ./output/windows
 
-      # Optionally, publish for Linux or other platforms
-      - name: Publish for Linux
-        run: dotnet publish -c Release -r linux-x64 --self-contained true -o ./output/linux
-
       # Zip Windows build output
       - name: Zip Windows build
         run: zip -r windows_build.zip ./output/windows/*
@@ -45,13 +41,3 @@ jobs:
         with:
           name: windows-build-${{ github.run_number }}
           path: windows_build.zip
-
-      # Optionally, zip and upload the Linux build artifact
-      - name: Zip Linux build
-        run: zip -r linux_build.zip ./output/linux/*
-
-      - name: Upload Linux build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: linux-build-${{ github.run_number }}
-          path: linux_build.zip
