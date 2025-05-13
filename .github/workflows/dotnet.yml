@@ -28,10 +28,10 @@ jobs:
         run: dotnet test --no-build --verbosity normal
 
       - name: Publish build output
-        run: dotnet publish -c Release -o output
+        run: dotnet publish -c Release -o ./output
 
-      - name: Zip published files
-        run: zip -r build.zip output/
+      - name: Zip the output directory
+        run: zip -r build.zip ./output/*
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
