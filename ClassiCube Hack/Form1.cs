@@ -98,6 +98,7 @@ namespace ClassiCube_Hack
             else
             {
                 HackMee = true;
+                MessageBox.Show("Custom Client detected\nClientID: " + clientid, "HackMee for ClassiCube")
             }
             injected = true;
         }
