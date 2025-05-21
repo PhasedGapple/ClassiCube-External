@@ -19,7 +19,7 @@ A external for ClassiCube.
   Changes the Client name after rejoining a CPE server (buggy)
 
 
-## Why doesn't the external work
+## Why doesn't the external work for me
 Make sure you have clicked the **Detect Client** button after going ingame and your ClassiCube exe is called "ClassiCube.exe".<br>
 I do not give support on versions older than **ClassiCube 1.3.5**<br>
 If you are still having problems, create a **issue** and tell me your ClassiCube version and the issue ur having.<br>
@@ -27,3 +27,9 @@ If you are still having problems, create a **issue** and tell me your ClassiCube
 ## Dependencies
 - Windows
 - .NET 6.0 or later
+
+## To-Do
+- [ ] Add a lua coding system
+- [ ] Add custom client support
+- [ ] Fix the FPS in description
+- [ ] View ping in description
