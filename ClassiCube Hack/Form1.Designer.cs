@@ -43,6 +43,7 @@
             textBox6 = new TextBox();
             button5 = new Button();
             button6 = new Button();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -217,12 +218,26 @@
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
+            // button7
+            // 
+            button7.BackColor = SystemColors.ActiveCaptionText;
+            button7.Font = new Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.ForeColor = SystemColors.Control;
+            button7.Location = new Point(12, 250);
+            button7.Name = "button7";
+            button7.Size = new Size(235, 65);
+            button7.TabIndex = 13;
+            button7.Text = "Load Lua File";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
+            Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(textBox6);
             Controls.Add(button5);
@@ -261,5 +276,6 @@
         private TextBox textBox6;
         private Button button5;
         private Button button6;
+        private Button button7;
     }
 }
