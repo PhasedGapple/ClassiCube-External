@@ -54,3 +54,7 @@ Lets you code lua plugins which arent too bad
 - [ ] Add custom client support
 - [ ] Fix the FPS in description
 - [ ] View ping in description
+- [ ] Redesign the UI
+- [ ] Let plugins read/write own offsets
+- [ ] Add UI for plugins using the API
+- [ ] Let users turn off/on plugin safety
