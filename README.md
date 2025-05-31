@@ -58,3 +58,4 @@ Lets you code lua plugins which arent too bad
 - [ ] Let plugins read/write own offsets
 - [ ] Add UI for plugins using the API
 - [ ] Let users turn off/on plugin safety
+- [ ] Use a lua sandbox (for safety)
